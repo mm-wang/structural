@@ -10,8 +10,8 @@ The shape database used is limited to W shapes.
 
 For this design, gravity loading in the major axis is considered.
 Moment, shear, and axial load is considered.
-+ gravity loading is downward
-+ axial loading is compressive
+1. gravity loading is downward
+2. axial loading is compressive
 """
 
 ### Import libraries
@@ -23,6 +23,7 @@ from __future__ import division
 import os
 import pandas as pd
 import math
+import matplotlib.pyplot as plt
 
 ### Define path to database of shapes for design
 
@@ -439,4 +440,9 @@ print 'Top 10 lightest shapes for combined forces: \n' + top_combined_shapes.to_
 print 'The selected shape for the loading: '
 print W_shapes[W_shapes.Shape.isin([lightest_combined_shape])][['Shape', 
                'Ix','total_defl','live_defl','Zx','moment_ult','M','shear_ult','V','axial_ult','P', 'P_M']]
-              
+
+
+
+
+
+
